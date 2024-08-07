@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Study Tracker</h1>
+    <form id="studyForm">
+        <label for="entryDate">Date of Entry:</label>
+        <input type="date" id="entryDate" required><br><br>
+
+        <label for="exitDate">Date of Exit:</label>
+        <input type="date" id="exitDate" required><br><br>
+
+        <label for="entryAirport">Gate/Airport of Entry:</label>
+        <input type="text" id="entryAirport" placeholder="e.g., Gate 5, Airport XYZ"><br><br>
+
+        <label for="exitAirport">Gate/Airport of Exit:</label>
+        <input type="text" id="exitAirport" placeholder="e.g., Gate 12, Airport ABC"><br><br>
+
+        <label for="imageUpload">Upload a Picture:</label>
+        <input type="file" id="imageUpload" accept="image/*"><br><br>
+
+        <button type="button" onclick="addEntry()">Add Entry</button>
+    </form>
+    <table id="entriesTable">
+        <thead>
+            <tr>
+                <th>Date of Entry</th>
+                <th>Date of Exit</th>
+                <th>Gate/Airport of Entry</th>
+                <th>Gate/Airport of Exit</th>
+                <th>Total Days Studied</th>
+                <th>Picture</th>
+            </tr>
+        </thead>
+        <tbody id="entriesBody">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">Total Days Studied:</td>
+                <td id="totalDays">0</td>
+            </tr>
+        </tfoot>
+    </table>
+    <button id="generatePdf" onclick="generatePDF()">Generate PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.16/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
